@@ -6,10 +6,14 @@ import java.awt.Point;
  * Class Shape:  class for shapes that can be represented with 2 points
  * @author Barb Ericson
  */
-public class Shape {
+public class Shape extends ShapeIComponent{
   // public constants
   public static final String RECTANGLE = "Rectangle"; // constant for rectangle
   public static final String OVAL = "Oval";           // constant for oval
+
+  public static final String ARC = "Arc";
+
+  public static final String LINE = "Line";
 
   // private instance variables
   private Color color; // color to draw shape in
@@ -18,6 +22,7 @@ public class Shape {
 
   /** Constructor */
   public Shape() {
+    super(0, 0);
     color = Color.black;
     p1 = new Point();
     p2 = new Point();
@@ -88,6 +93,14 @@ public class Shape {
   public void draw(Graphics g) {
     System.out.println("This method should be overridden by subclasses because");
     System.out.println("a generic Shape object does not know how to draw itself!");
+  }
+
+  public Point getP1() {
+    return p1;
+  }
+
+  public Point getP2() {
+    return p2;
   }
 }
 

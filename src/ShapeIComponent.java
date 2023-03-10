@@ -18,6 +18,8 @@ public class ShapeIComponent extends JComponent {
   private String currShapeType; // default shape type
   private int width;
   private int height;
+
+  private Color color;
   private Color backgroundColor;
   private Graphics backgroundG;   // graphics context of background image
 
@@ -31,10 +33,15 @@ public class ShapeIComponent extends JComponent {
     this.height = height;
     shapes = new ArrayList<Shape>();
     currShapeType = Shape.RECTANGLE;
-    backgroundColor = Color.YELLOW;
-    
+    backgroundColor = Color.WHITE;
+    color = Color.BLACK;
     init();  // call helper method to do rest of setup
   }
+
+  public void setColor(Color c) {
+    color = c;
+  }
+
 
   /* private helper method to initialize the shape component size and set the mouse listeners */
   private void init() {
@@ -143,6 +150,10 @@ public class ShapeIComponent extends JComponent {
         currentShape = new Rectangle();
       } else if (currShapeType.equals(Shape.OVAL)) {
         currentShape = new Oval();
+      } else if (currShapeType.equals(Shape.ARC)) {
+        currentShape = new Arc();
+      } else if (currShapeType.equals(Shape.LINE)) {
+        currentShape = new Line();
       }
       
       // set point 1 in the new shape
