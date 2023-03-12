@@ -23,7 +23,7 @@ public class Shape extends ShapeIComponent{
   /** Constructor */
   public Shape() {
     super(0, 0);
-    color = Color.black;
+
     p1 = new Point();
     p2 = new Point();
   }
@@ -31,6 +31,8 @@ public class Shape extends ShapeIComponent{
   public Color getColor() {
     return color;
   }
+
+
 
   /**
    * Method to get minimum x value of the bounding rectangle

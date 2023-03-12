@@ -42,7 +42,6 @@ public class ShapeIComponent extends JComponent {
     color = c;
   }
 
-
   /* private helper method to initialize the shape component size and set the mouse listeners */
   private void init() {
     // !!! recall this class (ShapeIComponent) extends JComponent

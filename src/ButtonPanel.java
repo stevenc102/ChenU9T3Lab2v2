@@ -23,11 +23,13 @@ public class ButtonPanel extends JPanel {
     // initialize the panel using the init() private helper method
     init();
   }
-  
+
+  public ButtonPanel() {
+  }
+
   /** Private helper method to initialize the panel */
   private void init() {
-    Color[] colors = {Color.RED, Color.ORANGE, Color.YELLOW, Color.GREEN, Color.CYAN, Color.BLUE, Color.PINK};
-    String[] colourNames = {"Red", "Orange", "Yellow", "Green", "Cyan", "Blue", "Pink"};
+
     JButton currButton = null;
     
     for (String name: shapeNames) {
@@ -42,22 +44,7 @@ public class ButtonPanel extends JPanel {
       });
     }
 
-    for (int i = 0; i < colors.length; i++) {
-      currButton = new JButton(colourNames[i]);
-      add(currButton);
-      currButton.addActionListener(new ActionListener() {
-        public void actionPerformed (ActionEvent e) {
-          if (shapeComponent != null) {
-            for (int j = 0 ; j < colourNames.length; j++) {
-              if (colourNames[j].equals(e.getActionCommand())) {
-                shapeComponent.setColor(colors[j]);
-              }
-            }
 
-          }
-        }
-      });
-    }
 
     
     // create the clear button

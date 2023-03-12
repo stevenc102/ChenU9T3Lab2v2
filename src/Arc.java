@@ -1,4 +1,5 @@
 import java.awt.Graphics;
+import java.awt.Color;
 public class Arc extends Shape {
     int startAngle;
     int arcAngle;
@@ -11,7 +12,7 @@ public class Arc extends Shape {
     }
 
     public void draw(Graphics g) {
-        g.setColor(getColor());
+        g.setColor(Color.RED);
         g.drawArc(getMinX(), getMinY(), getWidth(), getHeight(), startAngle, arcAngle);
     }
 }
